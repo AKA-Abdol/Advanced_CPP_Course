@@ -23,22 +23,22 @@ int main()
     //     cout << "hasan ";
     // cout << endl;
 
-    // array and vectors
-    int a[100];
-    int end = 0;
-    int n = 5;
-    while(n--)
-        cin >> a[end++];
-    cout << a[2] << endl;
-    // C -> just array (ordered memory allocation) ==> C++ -> (class)vector (unordered)
-    vector<int> v;
-    n = 5;
-    while(n--){
-        int temp;
-        cin >> temp;
-        v.push_back(temp);
-    }
-    cout << v.size() << endl;
+    // // array and vectors
+    // int a[100];
+    // int end = 0;
+    // int n = 5;
+    // while(n--)
+    //     cin >> a[end++];
+    // cout << a[2] << endl;
+    // // C -> just array (ordered memory allocation) ==> C++ -> (class)vector (unordered)
+    // vector<int> v;
+    // n = 5;
+    // while(n--){
+    //     int temp;
+    //     cin >> temp;
+    //     v.push_back(temp);
+    // }
+    // cout << v.size() << endl;
 
     return 0;
 }

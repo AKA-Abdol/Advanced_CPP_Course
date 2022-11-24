@@ -1,1 +1,3 @@
 1. Searching about namespaces, what are them and why should we use them?
+2. #define in cpp? can we reimplement for in the #define?
+3. Implement operator* for Vector class?(hint: v * 2)
