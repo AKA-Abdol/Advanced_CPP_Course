@@ -25,6 +25,7 @@ using namespace std;
 // // typedef
 // typedef vector<int> vInt;
 // typedef vector<string> vStr;
+// typedef long long ll;
 
 int main()
 {
