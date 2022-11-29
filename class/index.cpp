@@ -35,6 +35,9 @@ public:
         return out;
     }
     Vector operator*(double rate);
+
+// protected:
+
 };
 
 // constructor implementation
