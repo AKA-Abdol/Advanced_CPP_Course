@@ -1,3 +1,6 @@
 1. Searching about namespaces, what are them and why should we use them?
 2. #define in cpp? can we reimplement for in the #define?
 3. Implement operator* for Vector class?(hint: v * 2)
+------------------------------------------------------
+4. what is "protected" access specifier in cpp?
+5. Write a method for Hero(parent class) that gets another Hero and attack that hero in a frame
