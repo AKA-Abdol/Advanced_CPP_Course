@@ -2,6 +2,7 @@
 #include "shape/index.hpp"
 #include "circle/index.hpp"
 #include "rectangle/index.hpp"
+#include "triangle/index.hpp"
 
 using namespace std;
 
@@ -14,6 +15,7 @@ int main()
     shapes.pb(new Rectangle(2, 5));
     shapes.pb(new Circle(3));
     shapes.pb(new Circle(14));
+    shapes.pb(new Triangle(3, 4, 5));
     for(Shape *s : shapes)
         cout << s->getArea() << ' ' << s->getEnv() << endl;
 }
