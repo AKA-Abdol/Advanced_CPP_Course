@@ -1,0 +1,3 @@
+1. for LinkedList generic class write a 'POP with index' pop(1) -> remove the index 1
+2. write a 'REMOVE' method that removes an item in LinkedList
+3. (InClass) write the maxCount function with LinkedList

@@ -28,20 +28,33 @@ public:
     LinkedList() { head = NULL; }
     void add(T a);
     void pop();
-    T search(T ref);
+    int search(T ref);
     void edit(int idx, T replace);
     Node<T> *getNode(int idx);
     T &operator[](int idx);
     void all();
+    int size();
 };
 
-void LinkedList::
+template<typename T>
+int LinkedList<T>::size()
+{
+    int count = 0;
+    Node<T> *temp = head;
+    while(temp != NULL)
+        temp = temp->next; count++;
+        
+    return count;
+}
+
+template<typename T>
+void LinkedList<T>::all()
 {
     if (head == NULL)
         return;
 
-    Node *temp = head;
-    while (temp->next != NULL)
+    Node<T> *temp = head;
+    while (temp != NULL)
     {
         cout << temp->value << " ";
         temp = temp->next;
@@ -49,16 +62,18 @@ void LinkedList::
     cout << endl;
 }
 
-int &LinkedList::operator[](int idx)
+template<typename T>
+T &LinkedList<T>::operator[](int idx)
 {
     return this->getNode(idx)->value;
 }
 
-int LinkedList::search(int ref)
+template<typename T>
+int LinkedList<T>::search(T ref)
 {
-    Node *temp = head;
+    Node<T> *temp = head;
     int i = 0;
-    while (temp->next != NULL)
+    while (temp != NULL)
     {
         if (temp->value == ref)
             return i;
@@ -68,36 +83,40 @@ int LinkedList::search(int ref)
     return -1;
 }
 
-void LinkedList::edit(int idx, int replace)
+template<typename T>
+void LinkedList<T>::edit(int idx, T replace)
 {
     this->getNode(idx)->value = replace;
 }
 
-Node *LinkedList::getNode(int idx)
+template<typename T>
+Node<T> *LinkedList<T>::getNode(int idx)
 {
-    Node *temp = head;
+    Node<T> *temp = head;
     for (int i = 0; i < idx; i++)
         temp = temp->next;
     return temp;
 }
 
-void LinkedList::add(int a)
+template<typename T>
+void LinkedList<T>::add(T a)
 {
     if (head == NULL)
     {
-        head = new Node(a);
+        head = new Node<T>(a);
         return;
     }
 
-    Node *temp = head;
+    Node<T> *temp = head;
     while (temp->next != NULL)
     {
         temp = temp->next;
     }
-    temp->next = new Node(a);
+    temp->next = new Node<T>(a);
 }
 
-void LinkedList::pop()
+template<typename T>
+void LinkedList<T>::pop()
 {
     if (head == NULL)
         return;
@@ -109,7 +128,7 @@ void LinkedList::pop()
         return;
     }
 
-    Node *temp = head;
+    Node<T> *temp = head;
 
     while (temp->next->next != NULL)
     {
@@ -119,15 +138,43 @@ void LinkedList::pop()
     temp->next = NULL;
 }
 
+// template <typename T>
+// int myCount(vector<T> v, T ref)
+// {
+//     int cnt = 0;
+//     for(T x : v)
+//         if(ref == x)
+//             cnt++;
+//     return cnt;
+// }
+
+// template <typename T>
+// T maxCount(vector<T> v)
+// {
+//     int cntMax = 0;
+//     T valMax;
+//     for(T x : v)
+//         if(myCount(v, x) > cntMax)
+//         {
+//             cntMax = myCount(v, x);
+//             valMax = x;
+//         }
+//     return valMax;
+
+// }
+
+template <typename T>
+T maxCount(vector<T> v)
+{   
+
+
+}
+
 int main()
 {
-    LinkedList test;
-    test.add(12);
-    test.add(13);
-    test.add(1);
-    test.add(2);
-    test.add(9);
-    test[1] = -13;
-    test.all();
+    LinkedList<string> v;
+    v.add("hasan");
+    v.add("amirhossein");
+    cout << v.search("amirhossein") << endl;
     return 0;
 }
