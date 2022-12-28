@@ -34,7 +34,54 @@ public:
     T &operator[](int idx);
     void all();
     int size();
+    bool remove(T ref);
+    T pop(int idx);
 };
+
+template <typename T>
+T LinkedList<T>::pop(int idx)
+{
+    if(head == NULL)
+        return;
+
+    Node<T> *temp = head;
+    while(idx--)
+        temp = temp->next;
+    Node<T> *toFree = temp->next;
+    temp->next = temp->next->next;
+    free(toFree);
+    return toFree->value;
+}
+
+template <typename T>
+bool LinkedList<T>::remove(T ref)
+{
+    if(head == NULL)
+        return false;
+    if(head->next == NULL)
+    {
+        if(head->value == ref){
+            free(head);
+            head = NULL;
+            return true;
+        }
+        return false;
+    }
+
+    Node<T> *temp = head;
+    while(temp->next != NULL)
+    {
+        if(temp->next->value == ref)
+        {
+            Node<T> *toFree = temp->next;
+            temp->next = temp->next->next;
+            free(toFree);
+            return true;
+        }
+    }
+    return false;
+
+}
 
 template<typename T>
 int LinkedList<T>::size()
