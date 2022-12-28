@@ -6,6 +6,7 @@
         "new": "cpp",
         "shared_mutex": "cpp",
         "sstream": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "stdexcept": "cpp"
     }
 }
